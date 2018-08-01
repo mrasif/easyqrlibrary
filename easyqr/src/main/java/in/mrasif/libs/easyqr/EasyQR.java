@@ -12,6 +12,11 @@ public class EasyQR {
     public static final String CAMERA_MARGIN_RIGHT="camera_margin_right";
     public static final String CAMERA_MARGIN_BOTTOM="camera_margin_bottom";
     public static final String BACKGROUND_COLOR="background_color";
+    public static final String CAMERA_BORDER="CAMERA_BORDER";
+    public static final String CAMERA_BORDER_COLOR="CAMERA_BORDER_COLOR";
+    public static final String IS_SCAN_BAR="IS_SCAN_BAR";
+    public static final String IS_BEEP="IS_BEEP";
+    public static final String BEEP_RESOURCE_ID="BEEP_RESOURCE_ID";
 
     public static final int QR_SCANNER_REQUEST=1;
 

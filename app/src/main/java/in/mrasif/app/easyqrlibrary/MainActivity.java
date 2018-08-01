@@ -40,6 +40,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                intent.putExtra(EasyQR.CAMERA_MARGIN_TOP,50);
 //                intent.putExtra(EasyQR.CAMERA_MARGIN_RIGHT,50);
 //                intent.putExtra(EasyQR.CAMERA_MARGIN_BOTTOM,50);
+                intent.putExtra(EasyQR.CAMERA_BORDER,100);
+                intent.putExtra(EasyQR.CAMERA_BORDER_COLOR,"#C1000000");
+                intent.putExtra(EasyQR.IS_SCAN_BAR,true);
+                intent.putExtra(EasyQR.IS_BEEP,true);
+                intent.putExtra(EasyQR.BEEP_RESOURCE_ID,R.raw.beep);
                 startActivityForResult(intent, EasyQR.QR_SCANNER_REQUEST);
             } break;
         }

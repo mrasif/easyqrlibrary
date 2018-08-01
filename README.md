@@ -15,7 +15,7 @@ allprojects {
 Step 2. Add the dependency:
 ```
 dependencies {
-        compile 'com.github.mrasif:easyqrlibrary:v1.0.0'
+        compile 'com.github.mrasif:easyqrlibrary:v1.0.1'
 }
 ```
 ### For Maven:
@@ -33,7 +33,7 @@ Step 2. Add the dependency:
 <dependency>
     <groupId>com.github.mrasif</groupId>
     <artifactId>easyqrlibrary</artifactId>
-    <version>v1.0.0</version>
+    <version>v1.0.1</version>
 </dependency>
 ```
 ### For SBT:
@@ -43,7 +43,7 @@ resolvers += "jitpack" at "https://jitpack.io"
 ```
 Step 2. Add the dependency:
 ```
-libraryDependencies += "com.github.mrasif" % "easyqrlibrary" % "v1.0.0"
+libraryDependencies += "com.github.mrasif" % "easyqrlibrary" % "v1.0.1"
 ```
 ### For Leiningen:
 Step 1. Add it in your project.clj at the end of repositories:
@@ -52,7 +52,7 @@ Step 1. Add it in your project.clj at the end of repositories:
 ```
 Step 2. Add the dependency:
 ```
-:dependencies [[com.github.mrasif/easyqrlibrary "v1.0.0"]]
+:dependencies [[com.github.mrasif/easyqrlibrary "v1.0.1"]]
 ```
 
 ### Add this in your layout xml file:
@@ -136,6 +136,12 @@ intent.putExtra(EasyQR.CAMERA_MARGIN_LEFT,50);
 intent.putExtra(EasyQR.CAMERA_MARGIN_TOP,50);
 intent.putExtra(EasyQR.CAMERA_MARGIN_RIGHT,50);
 intent.putExtra(EasyQR.CAMERA_MARGIN_BOTTOM,50);
+intent.putExtra(EasyQR.CAMERA_BORDER,100);
+intent.putExtra(EasyQR.CAMERA_BORDER_COLOR,"#C1000000");
+intent.putExtra(EasyQR.IS_SCAN_BAR,true);
+intent.putExtra(EasyQR.IS_BEEP,true);
+// BEEP_RESOURCE_ID is optional
+intent.putExtra(EasyQR.BEEP_RESOURCE_ID,R.raw.beep);
 startActivityForResult(intent, EasyQR.QR_SCANNER_REQUEST);
 ```
 
