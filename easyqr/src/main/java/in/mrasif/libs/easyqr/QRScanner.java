@@ -237,11 +237,16 @@ public class QRScanner extends AppCompatActivity {
                     Intent intent=new Intent();
                     intent.putExtra(EasyQR.DATA,code);
                     setResult(RESULT_OK,intent);
+                    try {
+                        cameraSource.release();
+                    }
+                    catch (Exception e){
+                        Log.e(TAG, "receiveDetections: ", e);
+                    }
                     finish();
                 }
             }
         });
     }
-
 
 }
