@@ -15,7 +15,7 @@ allprojects {
 Step 2. Add the dependency:
 ```
 dependencies {
-        compile 'com.github.mrasif:easyqrlibrary:v1.0.1'
+        implementation 'com.github.mrasif:easyqrlibrary:v1.0.2'
 }
 ```
 ### For Maven:
@@ -33,7 +33,7 @@ Step 2. Add the dependency:
 <dependency>
     <groupId>com.github.mrasif</groupId>
     <artifactId>easyqrlibrary</artifactId>
-    <version>v1.0.1</version>
+    <version>v1.0.2</version>
 </dependency>
 ```
 ### For SBT:
@@ -43,7 +43,7 @@ resolvers += "jitpack" at "https://jitpack.io"
 ```
 Step 2. Add the dependency:
 ```
-libraryDependencies += "com.github.mrasif" % "easyqrlibrary" % "v1.0.1"
+libraryDependencies += "com.github.mrasif" % "easyqrlibrary" % "v1.0.2"
 ```
 ### For Leiningen:
 Step 1. Add it in your project.clj at the end of repositories:
@@ -52,7 +52,7 @@ Step 1. Add it in your project.clj at the end of repositories:
 ```
 Step 2. Add the dependency:
 ```
-:dependencies [[com.github.mrasif/easyqrlibrary "v1.0.1"]]
+:dependencies [[com.github.mrasif/easyqrlibrary "v1.0.2"]]
 ```
 
 ### Add this in your layout xml file:
