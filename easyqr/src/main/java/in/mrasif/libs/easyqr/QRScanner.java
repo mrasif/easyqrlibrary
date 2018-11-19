@@ -223,7 +223,12 @@ public class QRScanner extends AppCompatActivity {
         barcode.setProcessor(new Detector.Processor<Barcode>() {
             @Override
             public void release() {
-
+                try {
+                    cameraSource.release();
+                }
+                catch (Exception e){
+                    Log.e(TAG, "receiveDetections: ", e);
+                }
             }
 
             @Override
@@ -253,7 +258,7 @@ public class QRScanner extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         try {
-            cameraSource.release();
+//            cameraSource.release();
         }
         catch (Exception e){
             Log.e(TAG, "receiveDetections: ", e);
