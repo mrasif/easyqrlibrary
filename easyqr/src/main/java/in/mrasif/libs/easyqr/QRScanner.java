@@ -249,4 +249,14 @@ public class QRScanner extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        try {
+            cameraSource.release();
+        }
+        catch (Exception e){
+            Log.e(TAG, "receiveDetections: ", e);
+        }
+    }
 }
