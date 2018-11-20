@@ -191,7 +191,8 @@ public class QRScanner extends AppCompatActivity {
             setResult(RESULT_CANCELED,intent);
             this.finish();
         }
-        cameraSource=new CameraSource.Builder(this,barcode).setFacing(CameraSource.CAMERA_FACING_BACK)
+        cameraSource=new CameraSource.Builder(this,barcode)
+                .setFacing(CameraSource.CAMERA_FACING_BACK)
                 .setRequestedFps(24)
                 .setAutoFocusEnabled(true)
                 .setRequestedPreviewSize(1920,1024)
@@ -223,12 +224,7 @@ public class QRScanner extends AppCompatActivity {
         barcode.setProcessor(new Detector.Processor<Barcode>() {
             @Override
             public void release() {
-                try {
-                    cameraSource.release();
-                }
-                catch (Exception e){
-                    Log.e(TAG, "receiveDetections: ", e);
-                }
+
             }
 
             @Override
@@ -242,12 +238,7 @@ public class QRScanner extends AppCompatActivity {
                     Intent intent=new Intent();
                     intent.putExtra(EasyQR.DATA,code);
                     setResult(RESULT_OK,intent);
-                    try {
-                        cameraSource.release();
-                    }
-                    catch (Exception e){
-                        Log.e(TAG, "receiveDetections: ", e);
-                    }
+                    Log.d(TAG, "receiveDetections: "+code);
                     finish();
                 }
             }
@@ -257,11 +248,11 @@ public class QRScanner extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        try {
-//            cameraSource.release();
-        }
-        catch (Exception e){
-            Log.e(TAG, "receiveDetections: ", e);
+        if(cameraSource!=null){
+            cameraSource.stop();
+            cameraSource.release();
+            cameraSource = null;
         }
     }
+
 }
